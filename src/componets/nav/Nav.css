@@ -1,0 +1,81 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #08979c;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo h4 {
+  color: rgb(226, 226, 226);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 18px;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+  margin-bottom: 0;
+}
+
+.nav-links li {
+  list-style: none;
+}
+.nav-links a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    width: 45%;
+    right: 0px;
+    top: 8vh;
+    height: 92vh;
+    background-color: #08979c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav-links {
+    width: 45%;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+/* Todo : animation */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
