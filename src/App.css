@@ -1,6 +1,31 @@
 @import "~antd/dist/antd.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
+* {
+  font-family: "Poppins", sans-serif;
+  /* overflow-x: hidden; */
+}
+
+/* body {
+  overflow-x: hidden;
+} */
+
+.content-intro {
+  background-color: #ffffff;
+}
+
+.content-skills {
+  background-color: rgb(249, 249, 249);
+}
+
+.content-projects {
+  background-color: #ffffff;
+}
+
+.content-contact {
+  background-color: rgb(249, 249, 249);
+}
+
 @media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
