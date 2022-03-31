@@ -1,0 +1,39 @@
+.intro .ant-row {
+  padding: 10px 50px;
+}
+.intro h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+.intro h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.intro h1 span {
+  color: #08979c;
+}
+
+.intro h2 {
+  font-size: 1.4rem;
+  line-height: 2.25rem;
+}
+
+.intro .ant-btn-primary {
+  background-color: #08979c;
+  border-color: #08979c;
+}
+
+.intro .ant-btn-primary:hover {
+  background: #13c2c2;
+  border-color: #13c2c2;
+}
+
+.intro .ant-btn-default:hover {
+  color: #13c2c2;
+  border-color: #13c2c2;
+}
