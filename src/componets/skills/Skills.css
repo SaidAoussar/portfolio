@@ -1,0 +1,24 @@
+.skills {
+  padding: 100px 0px;
+}
+
+.skills .skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #08979c;
+  padding: 5px 10px;
+}
+.skills .skill:hover {
+  background-color: #13c2c2;
+}
+
+.skills .skill:hover h4 {
+  color: white;
+}
+
+.skills .skill h4 {
+  margin-left: 10px;
+  padding-top: 7px;
+  color: #08979c;
+}
