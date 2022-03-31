@@ -1,10 +1,10 @@
 import { Layout } from "antd";
 import "./App.css";
-import Nav from "./componets/nav/Nav";
-import Intro from "./componets/intro/Intro";
-import Skills from "./componets/skills/Skills";
-import Projects from "./componets/projects/Projects";
-import Contact from "./componets/contact/Contact";
+import Nav from "./components/nav/Nav";
+import Intro from "./components/intro/Intro";
+import Skills from "./components/skills/Skills";
+import Projects from "./components/projects/Projects";
+import Contact from "./components/contact/Contact";
 
 const { Header, Content } = Layout;
 
