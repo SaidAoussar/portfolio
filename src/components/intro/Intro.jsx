@@ -5,7 +5,7 @@ import introvector from "../../assets/img/introvector.png";
 
 function Intro() {
   return (
-    <div className="intro">
+    <div className="intro" id="home">
       <Row align="middle" justify="center">
         <Col span={12} offset={2}>
           <h4>Hi there ,</h4>
@@ -14,7 +14,7 @@ function Intro() {
           </h1>
           <h2>I am a Full-Stack Developer</h2>
           <Space size="middle">
-            <Button type="primary" size="large">
+            <Button href="#contact" type="primary" size="large">
               Get In Touch
             </Button>
             <Button type="default" size="large">
