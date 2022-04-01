@@ -5,7 +5,7 @@ import "./Projects.css";
 const { Meta } = Card;
 function Projects() {
   return (
-    <div className="projects">
+    <div className="projects" id="projects">
       <Space
         direction="horizontal"
         style={{ width: "100%", justifyContent: "center" }}
