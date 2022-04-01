@@ -46,7 +46,7 @@ function Skills() {
   ];
 
   return (
-    <div className="skills">
+    <div className="skills" id="skills">
       <Space
         direction="horizontal"
         style={{ width: "100%", justifyContent: "center" }}
