@@ -14,19 +14,19 @@ function Nav() {
   const menuItems = [
     {
       title: "Home",
-      href: "#",
+      href: "#home",
     },
     {
-      title: "About",
-      href: "#",
+      title: "Skills",
+      href: "#skills",
     },
     {
-      title: "Work",
-      href: "#",
+      title: "Project",
+      href: "#projects",
     },
     {
-      title: "Projects",
-      href: "#",
+      title: "Contact",
+      href: "#contact",
     },
   ];
   return (
