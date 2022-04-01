@@ -5,6 +5,7 @@ import Intro from "./components/intro/Intro";
 import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
 
 const { Header, Content } = Layout;
 
@@ -31,6 +32,9 @@ function App() {
         </Content>
         <Content className="content-contact">
           <Contact />
+        </Content>
+        <Content className="content-footer">
+          <Footer />
         </Content>
       </Layout>
     </div>
