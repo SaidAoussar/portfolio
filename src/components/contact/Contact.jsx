@@ -13,8 +13,20 @@ function Contact() {
             <Link href="mailto:saidaoussar1998@gmail.com" target="_top">
               saidaoussar1998@gmail.com
             </Link>
-            <form name="contact" method="post" netlify="true" onSubmit="submit">
+            <form
+              name="contact"
+              method="post"
+              netlify="true"
+              onSubmit="submit"
+              netlify-honeypot="bot-field"
+            >
               <input type="hidden" name="form-name" value="contact" />
+              <div hidden>
+                <label>
+                  Don’t fill this out if you’re human:
+                  <input name="bot-field" />
+                </label>
+              </div>
               <div>
                 <label>
                   Full name:
