@@ -1,0 +1,17 @@
+.contact {
+  padding: 100px 0px;
+}
+
+.contact .input-wrapper {
+  padding: 15px 0px;
+}
+
+.contact .ant-btn-primary {
+  background-color: #08979c;
+  border-color: #08979c;
+}
+
+.contact .ant-btn-primary:hover {
+  background: #13c2c2;
+  border-color: #13c2c2;
+}

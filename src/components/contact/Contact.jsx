@@ -1,11 +1,19 @@
-import { Col, Row, Typography } from "antd";
+import { Col, Row, Typography, Input, Space, Button } from "antd";
+
 import "./Contact.css";
 
 const { Title, Link } = Typography;
+const { TextArea } = Input;
 
 function Contact() {
   return (
-    <div>
+    <div className="contact" id="contact">
+      <Space
+        direction="horizontal"
+        style={{ width: "100%", justifyContent: "center" }}
+      >
+        <h1>Contact</h1>
+      </Space>
       <Row justify="center">
         <Col span={10}>
           <Title level={5} style={{ fontWeight: "700" }}>
@@ -13,40 +21,53 @@ function Contact() {
             <Link href="mailto:saidaoussar1998@gmail.com" target="_top">
               saidaoussar1998@gmail.com
             </Link>
-            <form
-              name="contact"
-              method="post"
-              netlify="true"
-              onSubmit="submit"
-              netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <div hidden>
-                <label>
-                  Don’t fill this out if you’re human:
-                  <input name="bot-field" />
-                </label>
-              </div>
-              <div>
-                <label>
-                  Full name:
-                  <input type="text" name="full-name" />
-                </label>
-              </div>
-              <div>
-                <label htmlFor="email">Email</label>
-                <input id="email" type="email" name="email" />
-              </div>
-              <div>
-                <label>
-                  Message:
-                  <textarea name="message"></textarea>
-                </label>
-              </div>
-              <button type="submit">Send</button>
-            </form>
           </Title>
-          <Title></Title>
+          <form
+            name="contact"
+            method="post"
+            netlify="true"
+            onSubmit="submit"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <div hidden>
+              <label>
+                Don’t fill this out if you’re human:
+                <input name="bot-field" />
+              </label>
+            </div>
+            <div className="input-wrapper">
+              <label>
+                Full name:
+                <Input
+                  type="text"
+                  name="full-name"
+                  size="large"
+                  placeholder="full name"
+                />
+              </label>
+            </div>
+            <div class="input-wrapper">
+              <label>
+                Email:
+                <Input
+                  type="email"
+                  name="email"
+                  size="large"
+                  placeholder="email"
+                />
+              </label>
+            </div>
+            <div class="input-wrapper">
+              <label>
+                Message:
+                <TextArea name="message" rows={6}></TextArea>
+              </label>
+            </div>
+            <Button htmlType="submit" type="primary" size="large">
+              Send
+            </Button>
+          </form>
         </Col>
       </Row>
     </div>
