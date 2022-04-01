@@ -1,4 +1,4 @@
-import { Button, Col, Row, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
 import "./Contact.css";
 
 const { Title, Link } = Typography;
