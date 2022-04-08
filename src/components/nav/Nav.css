@@ -50,6 +50,7 @@ nav {
     width: 50%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    z-index: 10;
   }
 
   .menu-icon {
