@@ -1,5 +1,4 @@
 import { Row, Col, Card, Space, Tag, Divider, Image } from "antd";
-import { GithubOutlined, EyeOutlined } from "@ant-design/icons";
 import projectsData from "../../data/projects.json";
 import "./Projects.css";
 
@@ -35,10 +34,6 @@ function Projects() {
                     />
                   )
                 }
-                // actions={[
-                //   <GithubOutlined key="github" />,
-                //   <EyeOutlined key="demo" />,
-                // ]}
               >
                 <Meta title={project.title} description={project.description} />
                 {project.with && (
