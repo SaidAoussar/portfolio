@@ -37,3 +37,29 @@
   color: #13c2c2;
   border-color: #13c2c2;
 }
+
+/* @media screen and (max-width: 768px) {
+  .intro .img-section {
+    display: none;
+  }
+
+  .intro .text-section {
+  }
+
+  .intro .ant-row {
+    padding: 100px 0px;
+  }
+} */
+
+@media screen and (max-width: 992px) {
+  .intro .img-section {
+    display: none;
+  }
+
+  .intro .text-section {
+  }
+
+  .intro .ant-row {
+    padding: 100px 0px;
+  }
+}

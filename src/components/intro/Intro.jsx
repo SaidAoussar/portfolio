@@ -7,7 +7,7 @@ function Intro() {
   return (
     <div className="intro" id="home">
       <Row align="middle" justify="center">
-        <Col span={12} offset={2}>
+        <Col lg={10} offset={2} md={20} className="text-section">
           <h4>Hi there ,</h4>
           <h1>
             My name is <span>Said Aoussar</span>
@@ -22,7 +22,7 @@ function Intro() {
             </Button>
           </Space>
         </Col>
-        <Col span={10}>
+        <Col lg={10} className="img-section">
           <img src={introvector} alt="Logo" />
         </Col>
       </Row>
