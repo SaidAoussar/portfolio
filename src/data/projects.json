@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "title": "library management system",
+    "description": "A library management system (LBMS), also known as an integrated library management system (SIGB), is software intended for the IT management of the various activities necessary for the operation of a library. It allows in particular to manage the loan, the description, the consultation, the research and the acquisition of documents.",
+    "technologies": ["HTML", "CSS", "Bootsrap", "Javascript", "PHP", "MYSQL"],
+    "img": "library.png",
+    "with": ["Ilyas Larhdid"]
+  },
+  {
+    "id": 2,
+    "title": "it asset management web application",
+    "description": "IT asset management is the set of business practices that support life cycle management and strategic decision making for the IT environment. IT assets include all hardware contained in your organization's IT environment.",
+    "technologies": ["HTML", "CSS", "Javascript", "Laravel", "MYSQL"],
+    "img": "gestion_parc.png"
+  },
+  {
+    "id": 3,
+    "title": "BlogApp - A Web App for Blogging",
+    "description": "It is a Blog application (website) where in this application people can post and read the articles which all are posted and even the people can comment in the articles",
+    "technologies": ["HTML", "CSS", "Javascript", "React", "NodeJS", "MongoDb"]
+  },
+  {
+    "id": 4,
+    "title": "DOCTOR FINDER",
+    "description": "Mini Project, android app to find doctors near to you, you can find doctors cabinet within your city.",
+    "technologies": ["java", "Android Studio", "MongoDB Realm"],
+    "with": ["ATMANI Yassine", "BEN KADOUR Naaima"]
+  },
+  {
+    "id": 5,
+    "title": "Fleet-management",
+    "description": "Mini project,desktop application  that helps companies organize, manage and coordinate vehicles from a central information system. ",
+    "technologies": ["java", "JavaFX", "jfoenix", "MySql"],
+    "with": ["ATMANI Yassine", "AKKAR Ahmed", "BEN KADOUR Naaima"]
+  },
+  {
+    "id": 6,
+    "title": "My Portfolio",
+    "description": "",
+    "technologies": ["HTML", "CSS", "ReactJS", "Ant Design"]
+  }
+]
