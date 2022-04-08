@@ -15,7 +15,7 @@ function Contact() {
         <h1>Contact</h1>
       </Space>
       <Row justify="center">
-        <Col span={10}>
+        <Col lg={10} md={16}>
           <Title level={5} style={{ fontWeight: "700" }}>
             Feel free to email me via{" "}
             <Link href="mailto:saidaoussar1998@gmail.com" target="_top">
@@ -26,7 +26,6 @@ function Contact() {
             name="contact"
             method="post"
             netlify="true"
-            onSubmit="submit"
             netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
