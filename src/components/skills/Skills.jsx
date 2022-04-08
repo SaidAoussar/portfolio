@@ -54,7 +54,7 @@ function Skills() {
         <h1>Skills</h1>
       </Space>
       <Row style={{ margin: "0px 50px" }}>
-        <Col span={8} style={{ padding: "0px 30px" }}>
+        <Col lg={8} style={{ padding: "0px 30px" }}>
           <Divider orientation="left">Front End</Divider>
           <Space wrap>
             {frontEndSkills.map(({ skill, icon }, index) => {
@@ -63,7 +63,7 @@ function Skills() {
             })}
           </Space>
         </Col>
-        <Col span={8} style={{ padding: "0px 30px" }}>
+        <Col lg={8} style={{ padding: "0px 30px" }}>
           <Divider orientation="left">Back End</Divider>
           <Space wrap>
             {backEndSkills.map(({ skill, icon }, index) => {
@@ -72,7 +72,7 @@ function Skills() {
             })}
           </Space>
         </Col>
-        <Col span={8} style={{ padding: "0px 30px" }}>
+        <Col lg={8} style={{ padding: "0px 30px" }}>
           <Divider orientation="left">Tools</Divider>
           <Space wrap>
             {tools.map(({ skill, icon }, index) => {
