@@ -1,5 +1,21 @@
 nav {
   background-color: #09a9af;
+  position: relative;
+}
+
+.overlay {
+  z-index: -1;
+  display: none;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: linear-gradient(hsl(233, 26%, 24%), transparent);
+}
+
+.overlay--d-block {
+  display: block;
 }
 
 nav div {
@@ -23,10 +39,6 @@ nav div {
   margin-bottom: 0;
 }
 
-.nav-links li {
-  list-style: none;
-}
-
 /* when scroll in section this class add to section */
 .nav-links .active {
   background-color: #07858a;
@@ -46,26 +58,24 @@ nav div {
   background-color: #07858a;
 }
 
+.nav-menu {
+  z-index: 2;
+  background-color: white;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+}
+
 .menu-icon {
   display: none;
   cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    width: 45%;
-    right: 0px;
-    top: 8vh;
-    height: 92vh;
-    background-color: #08979c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-    z-index: 10;
+  .hide-for-mobile {
+    display: none;
   }
 
   .menu-icon {
@@ -94,4 +104,12 @@ nav div {
     opacity: 1;
     transform: translateX(0px);
   }
+}
+
+.has-fade {
+  visibility: hidden;
+}
+
+.fade-in {
+  visibility: visible;
 }
