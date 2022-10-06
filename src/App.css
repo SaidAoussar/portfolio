@@ -32,6 +32,11 @@ html {
   background-color: #08979c;
 }
 
+.container {
+  margin: 0px auto;
+  max-width: 1500px;
+}
+
 @media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;

@@ -1,17 +1,21 @@
 nav {
+  background-color: #08979c;
+}
+
+nav div {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   min-height: 8vh;
-  background-color: #08979c;
+
   font-family: "Poppins", sans-serif;
 }
 
 .logo h4 {
-  color: rgb(226, 226, 226);
-  text-transform: uppercase;
+  color: white;
   letter-spacing: 5px;
   font-size: 18px;
+  font-weight: 500;
 }
 .nav-links {
   display: flex;
@@ -24,11 +28,12 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  color: rgb(226, 226, 226);
+  /* color: rgb(226, 226, 226); */
+  color: white;
   text-decoration: none;
-  letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .menu-icon {
