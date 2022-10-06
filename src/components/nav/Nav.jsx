@@ -8,7 +8,7 @@ import "./Nav.css";
 
 function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [isLocked, toggle] = useBodyScrollLock();
+  const [, toggle] = useBodyScrollLock();
 
   const navLinksClassname = classnames("nav-links", "hide-for-mobile", {
     "nav-active": toggleMenu
