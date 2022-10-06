@@ -1,8 +1,9 @@
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import classnames from "classnames";
+import { Link } from "react-scroll";
 
 import "./Nav.css";
-import classnames from "classnames";
 
 function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -21,7 +22,7 @@ function Nav() {
       href: "#skills"
     },
     {
-      title: "Project",
+      title: "Projects",
       href: "#projects"
     },
     {
@@ -39,7 +40,15 @@ function Nav() {
           {menuItems.map((item, index) => {
             return (
               <li key={index}>
-                <a href={item.href}>{item.title}</a>
+                <Link
+                  to={item.title.toLowerCase()}
+                  spy={true}
+                  offset={-50}
+                  smooth={true}
+                  duration={500}
+                >
+                  {item.title}
+                </Link>
               </li>
             );
           })}

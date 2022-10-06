@@ -17,6 +17,9 @@ function App() {
           style={{
             backgroundColor: "#ffffff",
             padding: "0px",
+            position: "fixed",
+            zIndex: 1,
+            width: "100%"
           }}
         >
           <Nav />

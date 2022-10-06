@@ -1,5 +1,5 @@
 nav {
-  background-color: #08979c;
+  background-color: #09a9af;
 }
 
 nav div {
@@ -7,7 +7,6 @@ nav div {
   justify-content: space-between;
   align-items: center;
   min-height: 8vh;
-
   font-family: "Poppins", sans-serif;
 }
 
@@ -27,13 +26,24 @@ nav div {
 .nav-links li {
   list-style: none;
 }
+
+/* when scroll in section this class add to section */
+.nav-links .active {
+  background-color: #07858a;
+}
+
 .nav-links a {
-  /* color: rgb(226, 226, 226); */
   color: white;
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: 500;
   font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.nav-links a:hover {
+  background-color: #07858a;
 }
 
 .menu-icon {
