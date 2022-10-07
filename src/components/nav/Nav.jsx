@@ -76,7 +76,10 @@ function Nav() {
                     offset={-50}
                     smooth={true}
                     duration={500}
-                    onClick={() => setToggleMenu(!toggleMenu)}
+                    onClick={() => {
+                      setToggleMenu(!toggleMenu);
+                      toggle();
+                    }}
                   >
                     {item.title}
                   </Link>
