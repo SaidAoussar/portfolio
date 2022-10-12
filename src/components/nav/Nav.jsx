@@ -5,22 +5,44 @@ import { Link } from "react-scroll";
 import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 
 import "./Nav.css";
+import { useEffect } from "react";
+
+const mediaQuery = "(min-width: 769px)";
+const mediaQueryMatch = window.matchMedia(mediaQuery);
 
 function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [, toggle] = useBodyScrollLock();
 
+  useEffect(() => {
+    const handleChange = () => {
+      if (toggleMenu) {
+        toggle();
+      }
+    };
+    mediaQueryMatch.addEventListener("change", handleChange);
+    return () => {
+      // This is called the cleanup phase aka beforeUnmount
+      mediaQueryMatch.removeEventListener("change", handleChange);
+    };
+  }, [toggleMenu]);
+
   const navLinksClassname = classnames("nav-links", "hide-for-mobile", {
     "nav-active": toggleMenu
   });
 
-  const overlayClassname = classnames("overlay", {
+  const overlayClassname = classnames("overlay", "hide-for-desktop", {
     "overlay--d-block": toggleMenu
   });
 
-  const navMenuClassName = classnames("nav-menu", "has-fade", {
-    "fade-in": toggleMenu
-  });
+  const navMenuClassName = classnames(
+    "nav-menu",
+    "has-fade",
+    "hide-for-desktop",
+    {
+      "fade-in": toggleMenu
+    }
+  );
 
   const menuItems = [
     {
