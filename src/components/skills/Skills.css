@@ -6,11 +6,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid #08979c;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
   padding: 5px 10px;
 }
 .skills .skill:hover {
-  background-color: #13c2c2;
+  background-color: var(--secondary-color);
 }
 
 .skills .skill:hover h4 {

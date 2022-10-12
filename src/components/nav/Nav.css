@@ -1,5 +1,5 @@
 nav {
-  background-color: #09a9af;
+  background-color: var(--primary-color);
   position: relative;
 }
 

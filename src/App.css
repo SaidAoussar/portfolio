@@ -1,6 +1,11 @@
 @import "~antd/dist/antd.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
+:root {
+  --primary-color: #09a9af;
+  --secondary-color: #13c2c2;
+}
+
 * {
   font-family: "Poppins", sans-serif;
   /* overflow-x: hidden; */

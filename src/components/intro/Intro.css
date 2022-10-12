@@ -15,7 +15,7 @@
 }
 
 .intro h1 span {
-  color: #08979c;
+  color: var(--primary-color);
 }
 
 .intro h2 {
@@ -24,18 +24,18 @@
 }
 
 .intro .ant-btn-primary {
-  background-color: #08979c;
-  border-color: #08979c;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .intro .ant-btn-primary:hover {
-  background: #13c2c2;
-  border-color: #13c2c2;
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .intro .ant-btn-default:hover {
-  color: #13c2c2;
-  border-color: #13c2c2;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 /* @media screen and (max-width: 768px) {
