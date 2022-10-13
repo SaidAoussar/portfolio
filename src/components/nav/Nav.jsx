@@ -25,7 +25,7 @@ function Nav() {
       // This is called the cleanup phase aka beforeUnmount
       mediaQueryMatch.removeEventListener("change", handleChange);
     };
-  }, [toggleMenu]);
+  }, [toggleMenu, toggle]);
 
   const navLinksClassname = classnames("nav-links", "hide-for-mobile", {
     "nav-active": toggleMenu
