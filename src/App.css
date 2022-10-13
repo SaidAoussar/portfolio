@@ -31,7 +31,7 @@ li {
   background-color: rgb(249, 249, 249);
 }
 .content-footer {
-  background-color: #08979c;
+  background-color: var(--primary-color);
 }
 
 .container {

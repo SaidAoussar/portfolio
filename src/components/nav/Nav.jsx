@@ -88,27 +88,25 @@ function Nav() {
         </ul>
 
         <ul className={navMenuClassName}>
-          <li>
-            {menuItems.map((item, index) => {
-              return (
-                <li key={index}>
-                  <Link
-                    to={item.title.toLowerCase()}
-                    spy={true}
-                    offset={-50}
-                    smooth={true}
-                    duration={500}
-                    onClick={() => {
-                      setToggleMenu(!toggleMenu);
-                      toggle();
-                    }}
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              );
-            })}
-          </li>
+          {menuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link
+                  to={item.title.toLowerCase()}
+                  spy={true}
+                  offset={-50}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => {
+                    setToggleMenu(!toggleMenu);
+                    toggle();
+                  }}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <div
           className="menu-icon"

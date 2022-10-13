@@ -41,6 +41,7 @@ function Contact() {
                   Full name:
                   <Input
                     type="text"
+                    required
                     name="full-name"
                     size="large"
                     placeholder="full name"
@@ -53,6 +54,7 @@ function Contact() {
                   <Input
                     type="email"
                     name="email"
+                    required
                     size="large"
                     placeholder="email"
                   />
@@ -61,7 +63,7 @@ function Contact() {
               <div class="input-wrapper">
                 <label>
                   Message:
-                  <TextArea name="message" rows={6}></TextArea>
+                  <TextArea name="message" rows={6} required></TextArea>
                 </label>
               </div>
               <Button htmlType="submit" type="primary" size="large">

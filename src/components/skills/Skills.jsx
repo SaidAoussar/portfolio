@@ -28,7 +28,7 @@ function Skills() {
     { skill: "Html", icon: html },
     { skill: "Css", icon: css },
     { skill: "Javascript", icon: js },
-    { skill: "ReactJs", icon: reactjs },
+    { skill: "ReactJs", icon: reactjs }
   ];
 
   const backEndSkills = [
@@ -37,12 +37,12 @@ function Skills() {
     { skill: "MongoDB", icon: mongodb },
     { skill: "Php", icon: php },
     { skill: "Laravel", icon: laravel },
-    { skill: "MySQL", icon: mysql },
+    { skill: "MySQL", icon: mysql }
   ];
 
   const tools = [
     { skill: "Github", icon: github },
-    { skill: "Git", icon: git },
+    { skill: "Git", icon: git }
   ];
 
   return (
@@ -58,7 +58,6 @@ function Skills() {
           <Divider orientation="left">Front End</Divider>
           <Space wrap>
             {frontEndSkills.map(({ skill, icon }, index) => {
-              console.log(skill, icon);
               return <Skill key={index} skill={skill} icon={icon} />;
             })}
           </Space>
@@ -67,7 +66,6 @@ function Skills() {
           <Divider orientation="left">Back End</Divider>
           <Space wrap>
             {backEndSkills.map(({ skill, icon }, index) => {
-              console.log(skill, icon);
               return <Skill key={index} skill={skill} icon={icon} />;
             })}
           </Space>
@@ -76,7 +74,6 @@ function Skills() {
           <Divider orientation="left">Tools</Divider>
           <Space wrap>
             {tools.map(({ skill, icon }, index) => {
-              console.log(skill, icon);
               return <Skill key={index} skill={skill} icon={icon} />;
             })}
           </Space>

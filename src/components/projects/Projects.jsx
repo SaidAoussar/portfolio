@@ -4,7 +4,6 @@ import "./Projects.css";
 
 const { Meta } = Card;
 function Projects() {
-  console.log(JSON.stringify(projectsData));
   return (
     <div className="projects" id="projects">
       <Space
@@ -23,7 +22,7 @@ function Projects() {
         >
           {projectsData.map((project) => {
             return (
-              <Col lg={8} md={12} sm={24}>
+              <Col key={project.id} lg={8} md={12} sm={24}>
                 <Card
                   cover={
                     project.img ? (
@@ -47,16 +46,18 @@ function Projects() {
                     <>
                       <Divider orientation="left">With:</Divider>
                       <Space wrap>
-                        {project.with.map((name) => (
-                          <Tag>{name}</Tag>
+                        {project.with.map((name, index) => (
+                          <Tag key={index}>{name}</Tag>
                         ))}
                       </Space>
                     </>
                   )}
                   <Divider orientation="left">technologies</Divider>
                   <Space wrap>
-                    {project.technologies.map((tech) => (
-                      <Tag color="cyan">{tech}</Tag>
+                    {project.technologies.map((tech, index) => (
+                      <Tag key={index} color="cyan">
+                        {tech}
+                      </Tag>
                     ))}
                   </Space>
                 </Card>
