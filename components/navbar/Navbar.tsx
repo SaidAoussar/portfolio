@@ -1,10 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, Layout, Row, Col, Switch, theme } from "antd";
+import { Menu, Layout, Row, Col, Switch, Drawer, theme } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 import DarkIcon from "public/img/dark-icon.svg";
 import LightIcon from "public/img/light-icon.svg";
 import { useAtom } from "jotai";
 import { themeAtom } from "@/atom/theme";
+import styled from "@emotion/styled";
+import { useState } from "react";
 
 const { useToken } = theme;
 
@@ -27,15 +30,42 @@ const items = [
   }
 ];
 
-const headerStyle = { height: 64, backgroundColor: "#FFFFFF" };
-
 const { Header } = Layout;
+const LinksMenu = styled(Menu)`
+  display: none;
+  border-bottom: none;
+  background-color: transparent;
+  margin-right: 10px;
+  flex: auto;
+  justify-content: end;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+const MobileMenu = styled(Menu)`
+  && {
+    border-inline-end: none;
+    background-color: transparent;
+    &.ant-menu-light.ant-menu-vertical {
+      border-inline-end: none;
+    }
+  }
+`;
 const Navbar = () => {
+  const [openDrawer, setOpenDrawer] = useState(false);
   const { token } = useToken();
   const [theme, setTheme] = useAtom(themeAtom);
-  console.log(token);
+
+  const showDrawer = () => {
+    setOpenDrawer(true);
+  };
+  const onCloseDrawer = () => {
+    setOpenDrawer(false);
+  };
+
   return (
     <Header
+      className="navbar"
       style={{
         height: "64px",
         backgroundColor: token.colorBgContainer,
@@ -49,33 +79,48 @@ const Navbar = () => {
         <Col style={{ minWidth: "0px", flex: "auto", display: "flex" }}>
           <div
             style={{
-              justifyContent: "end",
               flex: "auto",
               display: "flex",
-              alignItems: "center"
+              alignItems: "center",
+              justifyContent: "end"
             }}
           >
-            <Menu
-              theme={theme}
-              items={items}
-              mode="horizontal"
-              style={{
-                borderBottom: "none",
-                backgroundColor: "transparent",
-                marginRight: "10px"
-              }}
-            />
-            <Switch
-              checkedChildren={<Image src={DarkIcon} alt="dark icon" />}
-              unCheckedChildren={<Image src={LightIcon} alt="light icon" />}
-              onChange={(value) => {
+            <LinksMenu theme={theme} items={items} mode="horizontal" />
+            <SwitchTheme
+              className="switch-theme"
+              checked={theme === "dark"}
+              onChange={(value: boolean) => {
                 setTheme(value ? "dark" : "light");
               }}
             />
+
+            <MenuOutlined className="menu-icon" onClick={showDrawer} />
+            <Drawer placement="right" onClose={onCloseDrawer} open={openDrawer}>
+              <MobileMenu items={items} mode="vertical" />
+              <SwitchTheme
+                checked={theme === "dark"}
+                style={{
+                  marginLeft: "20px"
+                }}
+                onChange={(value: boolean) => {
+                  setTheme(value ? "dark" : "light");
+                }}
+              />
+            </Drawer>
           </div>
         </Col>
       </Row>
     </Header>
+  );
+};
+
+const SwitchTheme = (props: any) => {
+  return (
+    <Switch
+      checkedChildren={<Image src={DarkIcon} alt="dark icon" />}
+      unCheckedChildren={<Image src={LightIcon} alt="light icon" />}
+      {...props}
+    />
   );
 };
 

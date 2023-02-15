@@ -1,0 +1,18 @@
+.navbar .switch-theme {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar .switch-theme {
+    display: block;
+  }
+}
+
+.navbar .menu-icon {
+  display: inline-flex;
+}
+@media screen and (min-width: 768px) {
+  .navbar .menu-icon {
+    display: none;
+  }
+}
