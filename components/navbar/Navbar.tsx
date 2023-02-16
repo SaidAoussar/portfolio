@@ -8,8 +8,7 @@ import { useAtom } from "jotai";
 import { themeAtom } from "@/atom/theme";
 import styled from "@emotion/styled";
 import { useState } from "react";
-
-const { useToken } = theme;
+import Container from "components/container/Container";
 
 const items = [
   {
@@ -30,7 +29,6 @@ const items = [
   }
 ];
 
-const { Header } = Layout;
 const LinksMenu = styled(Menu)`
   display: none;
   border-bottom: none;
@@ -51,6 +49,8 @@ const MobileMenu = styled(Menu)`
     }
   }
 `;
+const { useToken } = theme;
+const { Header } = Layout;
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const { token } = useToken();
@@ -67,49 +67,56 @@ const Navbar = () => {
     <Header
       className="navbar"
       style={{
+        padding: "0px",
         height: "64px",
         backgroundColor: token.colorBgContainer,
         borderBottom: `1px solid ${token.colorBorder}`
       }}
     >
-      <Row align="middle">
-        <Col>
-          <h4>{`<AOUSSAR/>`}</h4>
-        </Col>
-        <Col style={{ minWidth: "0px", flex: "auto", display: "flex" }}>
-          <div
-            style={{
-              flex: "auto",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "end"
-            }}
-          >
-            <LinksMenu theme={theme} items={items} mode="horizontal" />
-            <SwitchTheme
-              className="switch-theme"
-              checked={theme === "dark"}
-              onChange={(value: boolean) => {
-                setTheme(value ? "dark" : "light");
+      <Container>
+        <Row align="middle">
+          <Col>
+            <h4>{`<AOUSSAR/>`}</h4>
+          </Col>
+          <Col style={{ minWidth: "0px", flex: "auto", display: "flex" }}>
+            <div
+              style={{
+                flex: "auto",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "end"
               }}
-            />
-
-            <MenuOutlined className="menu-icon" onClick={showDrawer} />
-            <Drawer placement="right" onClose={onCloseDrawer} open={openDrawer}>
-              <MobileMenu items={items} mode="vertical" />
+            >
+              <LinksMenu theme={theme} items={items} mode="horizontal" />
               <SwitchTheme
+                className="switch-theme"
                 checked={theme === "dark"}
-                style={{
-                  marginLeft: "20px"
-                }}
                 onChange={(value: boolean) => {
                   setTheme(value ? "dark" : "light");
                 }}
               />
-            </Drawer>
-          </div>
-        </Col>
-      </Row>
+
+              <MenuOutlined className="menu-icon" onClick={showDrawer} />
+              <Drawer
+                placement="right"
+                onClose={onCloseDrawer}
+                open={openDrawer}
+              >
+                <MobileMenu items={items} mode="vertical" />
+                <SwitchTheme
+                  checked={theme === "dark"}
+                  style={{
+                    marginLeft: "20px"
+                  }}
+                  onChange={(value: boolean) => {
+                    setTheme(value ? "dark" : "light");
+                  }}
+                />
+              </Drawer>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </Header>
   );
 };
