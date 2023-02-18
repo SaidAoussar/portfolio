@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -11,6 +13,21 @@ body {
   box-sizing: inherit;
 }
 
-h4 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0px;
+}
+
+.ant-carousel .slick-dots li button {
+  height: 16px;
+  border-radius: 4px;
+  background-color: #5cdbd3;
+  opacity: 0.6;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: #13c2c2;
 }

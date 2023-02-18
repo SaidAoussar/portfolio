@@ -17,7 +17,6 @@ import prismaIcon from "public/img/skills/prisma-icon.svg";
 import sqlIcon from "public/img/skills/sql-icon.svg";
 import gitIcon from "public/img/skills/git-icon.svg";
 
-console.log(gitIcon);
 const skills = [
   {
     id: 1,
@@ -58,7 +57,7 @@ const skills = [
   },
   {
     id: 7,
-    name: "Ant Design",
+    name: "NodeJS",
     icon: <Image src={nodejsIcon} alt="nodejs icon" height={30} width={30} />
   },
   {

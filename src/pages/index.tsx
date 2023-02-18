@@ -4,6 +4,11 @@ import { Layout, ConfigProvider, theme } from "antd";
 import Navbar from "components/navbar/Navbar";
 import { themeAtom } from "@/atom/theme";
 import { useAtom } from "jotai";
+import { Intro } from "components/intro/Intro";
+import Skills from "components/skills/Skills";
+import Projects from "components/projects/Projects";
+import Contact from "components/contact/Contact";
+import Footer from "components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +33,11 @@ export default function Home() {
       >
         <Layout>
           <Navbar />
+          <Intro />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Footer />
         </Layout>
       </ConfigProvider>
     </>
