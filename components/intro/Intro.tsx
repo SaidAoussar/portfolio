@@ -2,6 +2,7 @@ import { Col, Layout, Row, Typography, theme, Space, Button } from "antd";
 import styled from "styled-components";
 import Image from "next/image";
 import Container from "components/container/Container";
+import { device } from "@/utils/device";
 
 type TextProps = {
   $textColor: string;
@@ -9,13 +10,54 @@ type TextProps = {
 const Text = styled.span<TextProps>`
   color: ${(props) => props.$textColor};
 `;
+
+const Section = styled.section`
+  margin-top: 64px;
+  padding: 64px 0px;
+  scroll-margin-top: 64px;
+  @media ${device.md} {
+    padding: 0px;
+  } ;
+`;
+
+const TextCol = styled(Col)`
+  text-align: center;
+  @media ${device.md} {
+    text-align: initial;
+  }
+`;
+
+const H1 = styled(Typography.Title)`
+  && {
+    font-size: 30px;
+    @media ${device.md} {
+      font-size: 30px;
+    }
+    @media ${device.lg} {
+      font-size: 34px;
+    }
+    @media ${device.xl} {
+      font-size: 38px;
+    }
+  }
+`;
+
+const H3 = styled(Typography.Title)`
+  && {
+    font-size: 20px;
+    @media ${device.lg} {
+      font-size: 24px;
+    }
+  }
+`;
 const { Content } = Layout;
 const { Title } = Typography;
 
 export const Intro = () => {
   const { token } = theme.useToken();
+
   return (
-    <Content>
+    <Section id="intro">
       <Container>
         <Row
           align="middle"
@@ -25,17 +67,17 @@ export const Intro = () => {
             md: "space-between"
           }}
         >
-          <Col span={10} xs={22} md={10}>
+          <TextCol xs={22} md={12}>
             <Title level={4} style={{ margin: "0px 0px 8px" }}>
               Hi There,
             </Title>
-            <Title level={1} style={{ margin: "0px 0px 8px" }}>
+            <H1 level={1} style={{ margin: "0px 0px 8px" }}>
               My name is{" "}
               <Text $textColor={token.colorPrimary}>Said Aoussar</Text>
-            </Title>
-            <Title level={3} style={{ margin: "0px 0px 12px" }}>
+            </H1>
+            <H3 level={3} style={{ margin: "0px 0px 12px" }}>
               I am a Full-Stack Developer
-            </Title>
+            </H3>
             <Space>
               <Button
                 type="primary"
@@ -56,7 +98,7 @@ export const Intro = () => {
                 Resume
               </Button>
             </Space>
-          </Col>
+          </TextCol>
           <Col xs={0} md={11}>
             <Image
               src="/img/intro-icon.svg"
@@ -68,6 +110,6 @@ export const Intro = () => {
           </Col>
         </Row>
       </Container>
-    </Content>
+    </Section>
   );
 };

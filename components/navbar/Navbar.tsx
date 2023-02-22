@@ -12,47 +12,44 @@ import * as S from "./styles";
 
 const items = [
   {
-    label: <Link href="#home">Home</Link>,
+    label: (
+      <Link href="#intro" scroll={false}>
+        Home
+      </Link>
+    ),
     key: "home"
   },
   {
-    label: <Link href="#skills">Skills</Link>,
+    label: (
+      <Link href="#skills" scroll={false}>
+        Skills
+      </Link>
+    ),
     key: "skills"
   },
   {
-    label: <Link href="#projects">Projects</Link>,
+    label: (
+      <Link href="#projects" scroll={false}>
+        Projects
+      </Link>
+    ),
     key: "projects"
   },
   {
-    label: <Link href="#contact">Contact</Link>,
+    label: (
+      <Link href="#contact" scroll={false}>
+        Contact
+      </Link>
+    ),
     key: "contact"
   }
 ];
 
-// const LinksMenu = styled(Menu)`
-//   display: none;
-//   border-bottom: none;
-//   background-color: transparent;
-//   margin-right: 10px;
-//   flex: auto;
-//   justify-content: end;
-//   @media (min-width: 768px) {
-//     display: flex;
-//   }
-// `;
-// const MobileMenu = styled(Menu)`
-//   && {
-//     border-inline-end: none;
-//     background-color: transparent;
-//     &.ant-menu-light.ant-menu-vertical {
-//       border-inline-end: none;
-//     }
-//   }
-// `;
 const { useToken } = theme;
 const { Header } = Layout;
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
   const { token } = useToken();
   const [theme, setTheme] = useAtom(themeAtom);
 
@@ -70,7 +67,11 @@ const Navbar = () => {
         padding: "0px",
         height: "64px",
         backgroundColor: token.colorBgContainer,
-        borderBottom: `1px solid ${token.colorBorder}`
+        borderBottom: `1px solid ${token.colorBorder}`,
+        position: "fixed",
+        top: "0",
+        width: "100%",
+        zIndex: "20"
       }}
     >
       <Container>
@@ -87,7 +88,15 @@ const Navbar = () => {
                 justifyContent: "end"
               }}
             >
-              <S.LinksMenu theme={theme} items={items} mode="horizontal" />
+              <S.LinksMenu
+                theme={theme}
+                items={items}
+                mode="horizontal"
+                defaultSelectedKeys={[activeLink]}
+                onClick={({ key }) => {
+                  setActiveLink(key);
+                }}
+              />
               <SwitchTheme
                 className="switch-theme"
                 checked={theme === "dark"}
@@ -102,7 +111,14 @@ const Navbar = () => {
                 onClose={onCloseDrawer}
                 open={openDrawer}
               >
-                <S.MobileMenu items={items} mode="vertical" />
+                <S.MobileMenu
+                  items={items}
+                  mode="vertical"
+                  defaultSelectedKeys={[activeLink]}
+                  onClick={({ key }) => {
+                    setActiveLink(key);
+                  }}
+                />
                 <SwitchTheme
                   checked={theme === "dark"}
                   style={{

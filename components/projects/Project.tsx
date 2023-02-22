@@ -1,12 +1,44 @@
 import { Button, Carousel, Col, Row, Space, Typography } from "antd";
 import { IProject } from "./projects-data";
 import { Fragment } from "react";
+import styled from "styled-components";
+import { device } from "@/utils/device";
 
-const { Title, Paragraph } = Typography;
+const StyledProject = styled(Row)`
+  && {
+    flex-flow: row wrap-reverse;
+    @media ${device.md} {
+      flex-flow: row wrap;
+    }
+  }
+`;
+
+const Title = styled(Typography.Title)`
+  display: none;
+  @media ${device.md} {
+    display: block;
+  }
+`;
+
+const TitleSM = styled(Typography.Title)`
+  display: block;
+  margin-bottom: 12px;
+  @media ${device.md} {
+    display: none;
+  }
+`;
+
+const Paragraph = styled(Typography.Paragraph)`
+  && {
+    margin-top: 12px;
+  }
+`;
+
+//const { Paragraph } = Typography;
 const Project = ({ project }: { project: IProject }) => {
   return (
-    <Row justify="space-between" align="middle">
-      <Col span={10}>
+    <StyledProject justify="space-between" align="middle">
+      <Col xs={24} md={10}>
         <Title level={2}>{project.title}</Title>
         <Paragraph>{project.description}</Paragraph>
         <Space style={{ marginBottom: "16px" }}>
@@ -22,7 +54,8 @@ const Project = ({ project }: { project: IProject }) => {
           ))}
         </Space>
       </Col>
-      <Col span={12}>
+      <Col xs={24} md={12} style={{ order: 1 }}>
+        <TitleSM level={2}>{project.title}</TitleSM>
         <Carousel autoplay>
           {project.pictures.map((picture, index) => (
             // eslint-disable-next-line @next/next/no-img-element
@@ -36,7 +69,7 @@ const Project = ({ project }: { project: IProject }) => {
           ))}
         </Carousel>
       </Col>
-    </Row>
+    </StyledProject>
   );
 };
 

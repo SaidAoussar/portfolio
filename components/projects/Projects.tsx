@@ -1,4 +1,4 @@
-import { Button, Carousel, Col, Layout, Row, Space, Typography } from "antd";
+import { Layout, Space, Typography } from "antd";
 import Container from "components/container/Container";
 import ProjectsList from "./ProjectsList";
 
@@ -6,7 +6,7 @@ const { Content } = Layout;
 const { Title, Paragraph } = Typography;
 const Projects = () => {
   return (
-    <Content style={{ padding: "48px 0px" }}>
+    <Content id="projects" style={{ padding: "48px 0px" }}>
       <Container>
         <Space
           direction="horizontal"

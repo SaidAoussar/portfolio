@@ -10,7 +10,7 @@ const { TextArea } = Input;
 const Contact = () => {
   const { token } = theme.useToken();
   return (
-    <Content $bgColor={token.colorBgContainer}>
+    <Content id="contact" $bgColor={token.colorBgContainer}>
       <Container>
         <Space
           direction="horizontal"
