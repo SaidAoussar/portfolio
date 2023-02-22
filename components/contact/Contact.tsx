@@ -1,7 +1,7 @@
 import { Space, Typography, Row, Col, Form, Input, theme, Button } from "antd";
 import Link from "next/link";
 import Container from "components/container/Container";
-import { Content } from "./styled";
+import { Section } from "./styles";
 
 const { Title, Text } = Typography;
 const { Item } = Form;
@@ -10,7 +10,7 @@ const { TextArea } = Input;
 const Contact = () => {
   const { token } = theme.useToken();
   return (
-    <Content id="contact" $bgColor={token.colorBgContainer}>
+    <Section id="contact" $bgColor={token.colorBgContainer}>
       <Container>
         <Space
           direction="horizontal"
@@ -63,7 +63,7 @@ const Contact = () => {
           </Col>
         </Row>
       </Container>
-    </Content>
+    </Section>
   );
 };
 

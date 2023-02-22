@@ -1,12 +1,17 @@
 import { Layout, Space, Typography } from "antd";
 import Container from "components/container/Container";
+import styled from "styled-components";
 import ProjectsList from "./ProjectsList";
 
+const Section = styled.section`
+  padding: 48px 0px;
+  scroll-margin-top: 64px;
+`;
 const { Content } = Layout;
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 const Projects = () => {
   return (
-    <Content id="projects" style={{ padding: "48px 0px" }}>
+    <Section id="projects">
       <Container>
         <Space
           direction="horizontal"
@@ -20,7 +25,7 @@ const Projects = () => {
         </Space>
         <ProjectsList />
       </Container>
-    </Content>
+    </Section>
   );
 };
 

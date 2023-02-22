@@ -10,6 +10,7 @@ import { device } from "@/utils/device";
 const Section = styled.section<{ $bgColor: string }>`
   background-color: ${(props) => props.$bgColor};
   padding: 64px 0px;
+  scroll-margin-top: 64px;
   @media ${device.md} {
     padding: 0px;
   }

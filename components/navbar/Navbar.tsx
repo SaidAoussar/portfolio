@@ -95,6 +95,7 @@ const Navbar = () => {
                 defaultSelectedKeys={[activeLink]}
                 onClick={({ key }) => {
                   setActiveLink(key);
+                  onCloseDrawer();
                 }}
               />
               <SwitchTheme
@@ -117,6 +118,7 @@ const Navbar = () => {
                   defaultSelectedKeys={[activeLink]}
                   onClick={({ key }) => {
                     setActiveLink(key);
+                    onCloseDrawer();
                   }}
                 />
                 <SwitchTheme
