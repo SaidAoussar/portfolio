@@ -1,32 +1,37 @@
 import { Col, Layout, Row, Typography, theme, Space, Button } from "antd";
-import { css } from "@emotion/css";
-import introIcon from "public/img/intro-icon.svg";
+import styled from "styled-components";
 import Image from "next/image";
 import Container from "components/container/Container";
 
-const { Content } = Layout;
-const { Title, Text } = Typography;
-const useStyles = () => {
-  const { token } = theme.useToken();
-  return {
-    colorPrimary: css`
-      color: ${token.colorPrimary};
-    `
-  };
+type TextProps = {
+  $textColor: string;
 };
+const Text = styled.span<TextProps>`
+  color: ${(props) => props.$textColor};
+`;
+const { Content } = Layout;
+const { Title } = Typography;
+
 export const Intro = () => {
-  const styles = useStyles();
+  const { token } = theme.useToken();
   return (
     <Content>
       <Container>
-        <Row align="middle" justify="space-between">
-          <Col span={10}>
+        <Row
+          align="middle"
+          justify={{
+            xs: "center",
+            sm: "center",
+            md: "space-between"
+          }}
+        >
+          <Col span={10} xs={22} md={10}>
             <Title level={4} style={{ margin: "0px 0px 8px" }}>
               Hi There,
             </Title>
             <Title level={1} style={{ margin: "0px 0px 8px" }}>
               My name is{" "}
-              <span className={styles.colorPrimary}>Said Aoussar</span>
+              <Text $textColor={token.colorPrimary}>Said Aoussar</Text>
             </Title>
             <Title level={3} style={{ margin: "0px 0px 12px" }}>
               I am a Full-Stack Developer
@@ -52,7 +57,7 @@ export const Intro = () => {
               </Button>
             </Space>
           </Col>
-          <Col span={11}>
+          <Col xs={0} md={11}>
             <Image
               src="/img/intro-icon.svg"
               alt="developer"

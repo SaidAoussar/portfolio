@@ -1,27 +1,16 @@
-import { Space, Typography, Layout, Row, Col, Form, Input, theme } from "antd";
+import { Space, Typography, Row, Col, Form, Input, theme, Button } from "antd";
 import Link from "next/link";
 import Container from "components/container/Container";
-import { css } from "@emotion/css";
+import { Content } from "./styled";
 
 const { Title, Text } = Typography;
-const { Content } = Layout;
 const { Item } = Form;
 const { TextArea } = Input;
 
-const useStyles = () => {
-  const { token } = theme.useToken();
-  return {
-    content: css`
-      background-color: ${token.colorBgContainer};
-      padding: 48px 0px;
-    `
-  };
-};
-
 const Contact = () => {
-  const styles = useStyles();
+  const { token } = theme.useToken();
   return (
-    <Content className={styles.content}>
+    <Content $bgColor={token.colorBgContainer}>
       <Container>
         <Space
           direction="horizontal"
@@ -60,6 +49,15 @@ const Contact = () => {
               </Item>
               <Item label={<Text strong>Message :</Text>}>
                 <TextArea name="message" rows={5} size="large" />
+              </Item>
+              <Item>
+                <Button
+                  type="primary"
+                  size="large"
+                  style={{ fontWeight: "500" }}
+                >
+                  Send
+                </Button>
               </Item>
             </Form>
           </Col>

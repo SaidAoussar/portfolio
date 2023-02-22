@@ -6,9 +6,9 @@ import DarkIcon from "public/img/dark-icon.svg";
 import LightIcon from "public/img/light-icon.svg";
 import { useAtom } from "jotai";
 import { themeAtom } from "@/atom/theme";
-import styled from "@emotion/styled";
 import { useState } from "react";
 import Container from "components/container/Container";
+import * as S from "./styles";
 
 const items = [
   {
@@ -29,26 +29,26 @@ const items = [
   }
 ];
 
-const LinksMenu = styled(Menu)`
-  display: none;
-  border-bottom: none;
-  background-color: transparent;
-  margin-right: 10px;
-  flex: auto;
-  justify-content: end;
-  @media (min-width: 768px) {
-    display: flex;
-  }
-`;
-const MobileMenu = styled(Menu)`
-  && {
-    border-inline-end: none;
-    background-color: transparent;
-    &.ant-menu-light.ant-menu-vertical {
-      border-inline-end: none;
-    }
-  }
-`;
+// const LinksMenu = styled(Menu)`
+//   display: none;
+//   border-bottom: none;
+//   background-color: transparent;
+//   margin-right: 10px;
+//   flex: auto;
+//   justify-content: end;
+//   @media (min-width: 768px) {
+//     display: flex;
+//   }
+// `;
+// const MobileMenu = styled(Menu)`
+//   && {
+//     border-inline-end: none;
+//     background-color: transparent;
+//     &.ant-menu-light.ant-menu-vertical {
+//       border-inline-end: none;
+//     }
+//   }
+// `;
 const { useToken } = theme;
 const { Header } = Layout;
 const Navbar = () => {
@@ -76,7 +76,7 @@ const Navbar = () => {
       <Container>
         <Row align="middle">
           <Col>
-            <h4>{`<AOUSSAR/>`}</h4>
+            <h4>{`<Said Aoussar/>`}</h4>
           </Col>
           <Col style={{ minWidth: "0px", flex: "auto", display: "flex" }}>
             <div
@@ -87,7 +87,7 @@ const Navbar = () => {
                 justifyContent: "end"
               }}
             >
-              <LinksMenu theme={theme} items={items} mode="horizontal" />
+              <S.LinksMenu theme={theme} items={items} mode="horizontal" />
               <SwitchTheme
                 className="switch-theme"
                 checked={theme === "dark"}
@@ -102,7 +102,7 @@ const Navbar = () => {
                 onClose={onCloseDrawer}
                 open={openDrawer}
               >
-                <MobileMenu items={items} mode="vertical" />
+                <S.MobileMenu items={items} mode="vertical" />
                 <SwitchTheme
                   checked={theme === "dark"}
                   style={{
