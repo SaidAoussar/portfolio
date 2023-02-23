@@ -5,12 +5,10 @@ import htmlIcon from "public/img/skills/html-icon.svg";
 import cssIcon from "public/img/skills/css-icon.svg";
 import javascriptIcon from "public/img/skills/javascript-icon.svg";
 import reactIcon from "public/img/skills/react-icon.svg";
-import NextjsSvgIcon from "@/utils/NextjsSvgIcon";
 import antdIcon from "public/img/skills/antd-icon.svg";
 import nestjsIcon from "public/img/skills/nestjs-icon.svg";
 import prismaIcon from "public/img/skills/prisma-icon.svg";
 import postgresIcon from "public/img/skills/postgres-icon.svg";
-import sqlIcon from "public/img/skills/sql-icon.svg";
 
 export interface IProject {
   id: number;
