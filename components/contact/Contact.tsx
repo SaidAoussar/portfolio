@@ -30,13 +30,22 @@ const Contact = () => {
                 saidaoussar1998@gmail.com
               </Link>
             </Title>
-            <Form layout="vertical" autoComplete="off">
+            <Form
+              name="contact"
+              action="/success"
+              method="POST"
+              layout="vertical"
+              autoComplete="off"
+              data-netlify="true"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <Item label={<Text strong>Full Name :</Text>}>
                 <Input
                   name="full-name"
                   type="text"
                   placeholder="full name"
                   size="large"
+                  required
                 />
               </Item>
               <Item label={<Text strong>Email :</Text>}>
@@ -45,16 +54,18 @@ const Contact = () => {
                   type="email"
                   placeholder="email"
                   size="large"
+                  required
                 />
               </Item>
               <Item label={<Text strong>Message :</Text>}>
-                <TextArea name="message" rows={5} size="large" />
+                <TextArea name="message" rows={5} size="large" required />
               </Item>
               <Item>
                 <Button
                   type="primary"
                   size="large"
                   style={{ fontWeight: "500" }}
+                  htmlType="submit"
                 >
                   Send
                 </Button>
