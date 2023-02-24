@@ -30,6 +30,7 @@ const Contact = () => {
   const [form] = Form.useForm();
 
   const handleSubmit = (values: any) => {
+    console.log(values);
     if (values[`bot-field`] === undefined) {
       delete values[`bot-field`];
     }
@@ -114,25 +115,18 @@ const Contact = () => {
                 <Input type={`hidden`} />
               </Form.Item>
 
-              <Item label={<Text strong>Full Name :</Text>}>
+              <Item label={<Text strong>Full Name :</Text>} name="full-name">
                 <Input
-                  name="full-name"
                   type="text"
                   placeholder="full name"
                   size="large"
                   required
                 />
               </Item>
-              <Item label={<Text strong>Email :</Text>}>
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="email"
-                  size="large"
-                  required
-                />
+              <Item label={<Text strong>Email :</Text>} name="email">
+                <Input type="email" placeholder="email" size="large" required />
               </Item>
-              <Item label={<Text strong>Message :</Text>}>
+              <Item label={<Text strong>Message :</Text>} name="message">
                 <TextArea name="message" rows={5} size="large" required />
               </Item>
               <Item>
