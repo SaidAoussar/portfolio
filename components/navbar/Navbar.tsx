@@ -6,14 +6,15 @@ import DarkIcon from "public/img/dark-icon.svg";
 import LightIcon from "public/img/light-icon.svg";
 import { useAtom } from "jotai";
 import { themeAtom } from "@/atom/theme";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "components/container/Container";
 import * as S from "./styles";
+import { useRouter } from "next/router";
 
 const items = [
   {
     label: (
-      <Link href="#intro" scroll={false}>
+      <Link href="/#intro" scroll={false}>
         Home
       </Link>
     ),
@@ -21,7 +22,7 @@ const items = [
   },
   {
     label: (
-      <Link href="#skills" scroll={false}>
+      <Link href="/#skills" scroll={false}>
         Skills
       </Link>
     ),
@@ -29,7 +30,7 @@ const items = [
   },
   {
     label: (
-      <Link href="#projects" scroll={false}>
+      <Link href="/#projects" scroll={false}>
         Projects
       </Link>
     ),
@@ -37,7 +38,15 @@ const items = [
   },
   {
     label: (
-      <Link href="#contact" scroll={false}>
+      <Link href="/projects/#allprojects" scroll={false}>
+        All Projects
+      </Link>
+    ),
+    key: "allprojects"
+  },
+  {
+    label: (
+      <Link href="/#contact" scroll={false}>
         Contact
       </Link>
     ),
@@ -48,10 +57,18 @@ const items = [
 const { useToken } = theme;
 const { Header } = Layout;
 const Navbar = () => {
+  const router = useRouter();
   const [openDrawer, setOpenDrawer] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+  // const [activeLink, setActiveLink] = useState(
+  //   router.asPath.split("#")[1] ? router.asPath.split("#")[1] : "home"
+  // );
   const { token } = useToken();
   const [theme, setTheme] = useAtom(themeAtom);
+
+  useEffect(() => {
+    console.log("active link : ", activeLink);
+  }, [activeLink]);
 
   const showDrawer = () => {
     setOpenDrawer(true);
