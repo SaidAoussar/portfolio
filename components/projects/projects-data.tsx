@@ -73,11 +73,11 @@ const projectsData: IProject[] = [
       }
     ],
     pictures: [
-      "/img/projects/devblog-frontend/home-page.png",
-      "/img/projects/devblog-frontend/home-page-dark.png",
-      "/img/projects/devblog-frontend/login-page.png",
-      "/img/projects/devblog-frontend/readinglist-page.png",
-      "/img/projects/devblog-frontend/tags-page.png"
+      "/img/projects/devblog-frontend/home-page.webp",
+      "/img/projects/devblog-frontend/home-page-dark.webp",
+      "/img/projects/devblog-frontend/login-page.webp",
+      "/img/projects/devblog-frontend/readinglist-page.webp",
+      "/img/projects/devblog-frontend/tags-page.webp"
     ]
   },
   {
@@ -114,8 +114,8 @@ const projectsData: IProject[] = [
       }
     ],
     pictures: [
-      "/img/projects/devblog-backend/routes.png",
-      "/img/projects/devblog-backend/posts-route.png"
+      "/img/projects/devblog-backend/routes.webp",
+      "/img/projects/devblog-backend/posts-route.webp"
     ]
   }
 ];

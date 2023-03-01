@@ -52,6 +52,7 @@ const Contact = () => {
       type: "success",
       content: "form submitted successfully"
     });
+    form.resetFields();
   };
   const showError = (error: any) => {
     messageApi.open({

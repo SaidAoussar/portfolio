@@ -23,12 +23,12 @@ h5 {
 }
 
 .ant-carousel .slick-dots li button {
-  height: 16px;
-  border-radius: 4px;
-  background-color: #5cdbd3;
-  opacity: 0.6;
+  height: 16px !important;
+  border-radius: 4px !important;
+  background-color: #5cdbd3 !important;
+  opacity: 0.6 !important;
 }
 
 .ant-carousel .slick-dots li.slick-active button {
-  background-color: #13c2c2;
+  background-color: #13c2c2 !important;
 }
