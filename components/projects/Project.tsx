@@ -43,7 +43,7 @@ const Project = ({ project }: { project: IProject }) => {
         <Paragraph>{project.description}</Paragraph>
         <Space style={{ marginBottom: "16px" }}>
           {project.links.map((link) => (
-            <Button key={link.id} size="small" icon={link.icon}>
+            <Button key={link.id} size="small" icon={link.icon} href={link.link} target="_blank">
               {link.text}
             </Button>
           ))}

@@ -94,6 +94,8 @@ export const Intro = () => {
                 style={{
                   fontWeight: "500"
                 }}
+                href="https://drive.google.com/file/d/1v83XPM0m0xjmIEF8RH_OX1VER7GDWbXL/view?usp=sharing"
+                target="_blank"
               >
                 Resume
               </Button>
